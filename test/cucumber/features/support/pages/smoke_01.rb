@@ -221,7 +221,7 @@ end
 
 def path_root_proyecto
   aert = File.dirname(__FILE__)
-  quitar = aert.match(/.Argentina.*/)
+  quitar = aert.match(/.GobiernoDigital.*/)
   aert = aert.gsub("#{quitar}","")
   return aert
 end
