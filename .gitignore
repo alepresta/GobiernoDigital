@@ -2,3 +2,7 @@ tmp/
 .idea/
 *.log
 .idea/workspace.xml
+app/views/welcome/index.html.erb
+test/cucumber/features/support/env.rb
+app/views/pages/*
+test/report/json_reportes/*
