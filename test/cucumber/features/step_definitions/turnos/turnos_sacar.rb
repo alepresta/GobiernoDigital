@@ -3,6 +3,7 @@ Then /^1- Sacar un turno y cancelarlo en el momento$/ do
   go(pagina)
   provincia = capturar(:xpath,'/html/body/app-root/app-seleccion-turno/div[2]/div/section/div/div/form/div[2]/div/div[1]/select')
   select_click(provincia,"Capital Federal")
+  esperar(1)
   localidad = capturar(:xpath,'/html/body/app-root/app-seleccion-turno/div[2]/div/section/div/div/form/div[2]/div/div[2]/select')
   select_click(localidad,"Belgrano")
   capturar(:id,'puntoAtencion_0').click
@@ -64,12 +65,73 @@ end
 
 
 Then /^2- Sacar un turno y cancelarlo por mail$/ do
-  eliminar_mail_de_turnos
+  google
+  go("https://www.google.com/gmail/")
+  50.times do
+    mail_01 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[1]/td[6]/div/div/div/span/span')
+    mail_02 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[2]/td[6]/div/div/div/span/span')
+    mail_03 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[3]/td[6]/div/div/div/span/span')
+    mail_04 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[4]/td[6]/div/div/div/span/span')
+    mail_05 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[5]/td[6]/div/div/div/span/span')
+    mail_06 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[6]/td[6]/div/div/div/span/span')
+    mail_07 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[7]/td[6]/div/div/div/span/span')
+    mail_08 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[8]/td[6]/div/div/div/span/span')
+    mail_09 = capturar(:xpath,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[6]/div/div[1]/div[2]/div/table/tbody/tr[9]/td[6]/div/div/div/span/span')
+    sistema_nacional_de_turnos = "Sistema Nacional de Turnos"
+    if mail_01.text == sistema_nacional_de_turnos
+      mail_01.click
+      capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+    else
+      if mail_02.text == sistema_nacional_de_turnos
+        mail_02.click
+        capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+      else
+        if mail_03.text == sistema_nacional_de_turnos
+          mail_03.click
+          capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+        else
+          if mail_04.text == sistema_nacional_de_turnos
+            mail_04.click
+            capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+          else
+            if mail_05.text == sistema_nacional_de_turnos
+              mail_05.click
+              capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+            else
+              if mail_06.text == sistema_nacional_de_turnos
+                mail_06.click
+                capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+              else
+                if mail_07.text == sistema_nacional_de_turnos
+                  mail_07.click
+                  capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+                else
+                  if mail_08.text == sistema_nacional_de_turnos
+                    mail_08.click
+                    capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+                  else
+                    if mail_09.text == sistema_nacional_de_turnos
+                      mail_09.click
+                      capturar(:css, '.iH > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)').click
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  puts "TURNOS ELIMINADOS.................................[PASSED]".blue
+
+  #eliminar_mail_de_turnos
   pagina = "https://turnos.argentina.gob.ar/turnos/seleccionTurno/9"
   go(pagina)
   provincia = capturar(:xpath,'/html/body/app-root/app-seleccion-turno/div[2]/div/section/div/div/form/div[2]/div/div[1]/select')
   select_click(provincia,"Capital Federal")
   localidad = capturar(:xpath,'/html/body/app-root/app-seleccion-turno/div[2]/div/section/div/div/form/div[2]/div/div[2]/select')
+  esperar(1)
   select_click(localidad,"Belgrano")
   capturar(:id,'puntoAtencion_0').click
   capturar(:xpath,'/html/body/app-root/app-seleccion-turno/div[2]/div/section/div/div/form/app-puntos-atencion/div/div/button').click
