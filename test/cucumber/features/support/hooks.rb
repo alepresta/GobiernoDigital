@@ -61,16 +61,16 @@ at_exit do
           estado = false
           estado_label = "<label class=\"label label-success\"> Sin errores</label>"
         end
-        pruebas_ejecuciones = '          <h3>Ejecuciones de pruebas</h3>
-                  <table class="table table-hover table-striped table-bordered dataTable" id="tablaEjecucionPruebas">
-                    <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>Caso de prueba</th>
-                      <th>Resultado</th>
-                    </tr>
-                    </thead>
-                    <tbody>'
+        pruebas_ejecuciones = '           <h3>Ejecuciones de pruebas</h3>
+<table class="table table-hover table-striped table-bordered dataTable" id="tablaEjecucionPruebas">
+  <thead>
+  <tr>
+    <th>Fecha</th>
+    <th>Caso de prueba</th>
+    <th>Resultado</th>
+  </tr>
+  </thead>
+  <tbody>'
         pruebas_anteriores = '     <h3>Pruebas anteriores</h3>
                   <table class="table table-hover table-striped table-bordered  dataTable">
                     <thead>
