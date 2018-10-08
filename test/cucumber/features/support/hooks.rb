@@ -102,7 +102,7 @@ at_exit do
         # html_index.gsub!("#{pruebas_anteriores}","#{remplazo_pruebas_anteriores}")
         # html_index_nuevo = "#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb"
         # IO.write("#{html_index_nuevo}",html_index)
-        # File.delete("#{path_root_proyecto}/GobiernoDigital/test/report/constructor_de_reportes/#{fichero}")
+        File.delete("#{path_root_proyecto}/GobiernoDigital/test/report/constructor_de_reportes/#{fichero}")
       else
         nombre_del_archivo = "#{plataforma}_#{tag}_#{fecha}_#{hora}.#{formato}"
         File.rename "#{path_root_proyecto}/GobiernoDigital/test/report/constructor_de_reportes/#{fichero}", "#{path_root_proyecto}/GobiernoDigital/test/report/json_reportes/#{nombre_del_archivo}"
