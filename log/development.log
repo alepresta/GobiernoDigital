@@ -3597,3 +3597,66 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-08 12:41:59 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/apresta/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 148ms (Views: 143.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 12:44:39 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_organismos" for 127.0.0.1 at 2018-10-08 12:44:44 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_organismos"}
+  Rendering pages/Argentina_organismos within layouts/application
+  Rendered pages/Argentina_organismos within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 12:53:51 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/apresta/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 133ms (Views: 129.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_sube.html.erb" for 127.0.0.1 at 2018-10-08 12:53:59 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_sube.html.erb"}
+  Rendering pages/Argentina_sube.html.erb within layouts/application
+  Rendered pages/Argentina_sube.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 13:07:49 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_sube" for 127.0.0.1 at 2018-10-08 13:07:52 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_sube"}
+  Rendering pages/Argentina_sube.html.erb within layouts/application
+  Rendered pages/Argentina_sube.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 13:46:34 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
