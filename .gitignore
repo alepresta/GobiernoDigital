@@ -7,3 +7,4 @@ test/cucumber/features/support/env.rb
 app/views/pages/*
 test/report/json_reportes/*
 log/*
+log/development.log
