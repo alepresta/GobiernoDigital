@@ -2500,3 +2500,212 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:23:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/apresta/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 164ms (Views: 160.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_sube" for 127.0.0.1 at 2018-10-08 08:23:54 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_sube"}
+  Rendering pages/Argentina_sube within layouts/application
+  Rendered pages/Argentina_sube within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:28:34 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_organismos" for 127.0.0.1 at 2018-10-08 08:28:37 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_organismos"}
+  Rendering pages/Argentina_organismos within layouts/application
+  Rendered pages/Argentina_organismos within layouts/application (1.8ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:44:23 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:51:43 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880779554620'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:52:44 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880776507060'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:52:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880773590060'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:53:14 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'images/favicom.png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880771969940'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:53:16 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'images/favicom.png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880695284540'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:53:27 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/favicom.png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880795654340'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:53:28 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.png" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: 
+    11:     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/favicom.png' %>
+    12: 
+    13:   </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2035001657321016794_69880774459560'
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:54:26 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 08:59:01 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 09:01:39 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 09:01:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_organismos" for 127.0.0.1 at 2018-10-08 09:02:02 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_organismos"}
+  Rendering pages/Argentina_organismos within layouts/application
+  Rendered pages/Argentina_organismos within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/Argentina_sube" for 127.0.0.1 at 2018-10-08 09:02:06 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"Argentina_sube"}
+  Rendering pages/Argentina_sube within layouts/application
+  Rendered pages/Argentina_sube within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
