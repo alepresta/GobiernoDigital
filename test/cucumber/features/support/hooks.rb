@@ -77,12 +77,43 @@ at_exit do
         IO.write("#{path_pages}",html_content)
 
         if html_content.include? 'step failed'
+<<<<<<< HEAD
           #estado_texto = "  ლ(ಠ益ಠლ) ERROR"
           estado_label = '<label class="label label-danger"> Con errores</label>'
         else
           #estado_texto = " \\(• ◡ •)/ Sin Errores"
           estado_label = '<label class="label label-success"> Sin errores</label>'
         end
+=======
+          estado_texto = "  ლ(ಠ益ಠლ) ERROR"
+          estado = true
+          estado_label = "<label class=\"label label-danger\"> Con errores</label>"
+        else
+          estado_texto = " \\(• ◡ •)/ Sin Errores"
+          estado = false
+          estado_label = "<label class=\"label label-success\"> Sin errores</label>"
+        end
+        pruebas_ejecuciones = '           <h3>Ejecuciones de pruebas</h3>
+<table class="table table-hover table-striped table-bordered dataTable" id="tablaEjecucionPruebas">
+  <thead>
+  <tr>
+    <th>Fecha</th>
+    <th>Caso de prueba</th>
+    <th>Resultado</th>
+  </tr>
+  </thead>
+  <tbody>'
+        pruebas_anteriores = '     <h3>Pruebas anteriores</h3>
+                  <table class="table table-hover table-striped table-bordered  dataTable">
+                    <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Caso de prueba</th>
+                      <th>Resultado</th>
+                    </tr>
+                    </thead>
+                    <tbody>'
+>>>>>>> 9d545a8d62f6aa56df0459061e591a9f4275ed86
         remplazo_pruebas = " #{pruebas_ejecuciones}
                     <tr>
                     <td><small>#{fecha}</small></td>
@@ -95,14 +126,24 @@ at_exit do
                     <td><%= link_to \"#{nombre_del_archivo}\", page_path(\"#{nombre_del_archivo}\") %></td>
                     <td>#{estado_label}</td>
                     </tr>"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d545a8d62f6aa56df0459061e591a9f4275ed86
         html_index = IO.read("#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb")
         html_index.gsub!("#{pruebas_ejecuciones}","#{remplazo_pruebas}")
         html_index_nuevo = "#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb"
         IO.write("#{html_index_nuevo}",html_index)
 
+<<<<<<< HEAD
         #html_index.gsub!("QA231425267","#{pegar_1}")
         #IO.write("#{html_index_nuevo}",html_index)
+=======
+        # html_index.gsub!("#{pruebas_anteriores}","#{remplazo_pruebas_anteriores}")
+        # html_index_nuevo = "#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb"
+        # IO.write("#{html_index_nuevo}",html_index)
+
+>>>>>>> 9d545a8d62f6aa56df0459061e591a9f4275ed86
         File.delete("#{path_root_proyecto}/GobiernoDigital/test/report/constructor_de_reportes/#{fichero}")
       else
         nombre_del_archivo = "#{plataforma}_#{tag}_#{fecha}_#{hora}.#{formato}"
