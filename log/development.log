@@ -4017,3 +4017,12 @@ Completed 200 OK in 107ms (Views: 102.3ms | ActiveRecord: 0.0ms)
 >>>>>>> 9d545a8d62f6aa56df0459061e591a9f4275ed86
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-09 09:38:22 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/apresta/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 165ms (Views: 160.4ms | ActiveRecord: 0.0ms)
+
+
