@@ -29,6 +29,8 @@ cucumber_features = [
     {:fichero => "turnos_sacar_multiples.json" ,        :tag => "turnos_sacar_multiples" ,        :formato => "json",  :plataforma => "SNT"},
     {:fichero => "turnos_sacar_multiples_tod.html" ,    :tag => "turnos_sacar_multiples_tod" ,    :formato => "html",  :plataforma => "SNT"},
     {:fichero => "turnos_sacar_multiples_tod.json" ,    :tag => "turnos_sacar_multiples_tod",     :formato => "json",  :plataforma => "SNT"},
+    {:fichero => "turnos_status.html" ,                 :tag => "turnos_status" ,                 :formato => "html",  :plataforma => "SNT"},
+    {:fichero => "turnos_status.json" ,                 :tag => "turnos_status",                  :formato => "json",  :plataforma => "SNT"},
 ]
 
 
