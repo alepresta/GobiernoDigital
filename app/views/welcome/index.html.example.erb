@@ -1,25 +1,259 @@
 
-<script type="javascript">
-  setInterval(
-      window.location.reload(true),
-      1000
-  );
+<style>
+  small{
+    opacity:0.8;
+    font-size: 11px;
+  }
+    .dataTables_paginate{
+      margin-top:15px!important
+    }
+
+    #tablaEjecucionPruebas thead th:first-child,
+    #tablaEjecucionPruebas tbody tr td:first-child
+    {display:none}
+</style>
+
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ejecuciones de pruebas</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li class="active"><%= link_to 'Casos de prueba', controller: 'articles' %></li>
+        <li><%= link_to 'Nuevos casos de prueba', new_article_path %></li>
+        <li><a target="_blank" href="http://35.198.13.196/login.php">Acceso a TestLink</a></li>
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <h1>Casos de prueba</h1>
+    <hr>
+  </div>
+
+  <div class="col-sm-6">
+
+<div class="panel">
+  <div class="panel-body">
+
+                 <h3>Ejecuciones de pruebas</h3>
+<table class="table table-hover table-striped table-bordered dataTable" id="tablaEjecucionPruebas">
+  <thead>
+  <tr>
+    <th>Fecha</th>
+    <th>Caso de prueba</th>
+    <th>Resultado</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+
+</table>
+  </div>
+</div>
+
+  </div>
+
+  <div class="col-sm-6">
+
+    <div class="panel">
+      <div class="panel-body">
+
+     <h3>Pruebas anteriores</h3>
+    <table class="table table-hover table-striped table-bordered  dataTable">
+      <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Caso de prueba</th>
+        <th>Resultado</th>
+      </tr>
+      </thead>
+      <tbody>
+    <tr>
+    <td><small>2018-10-08</small></td>
+    <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+    <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_sube", page_path("Argentina_sube") %></td>
+      <td><label class="label label-success"> Sin errores</label></td>
+    </tr>
+    <tr>
+      <td><small>2018-10-08</small></td>
+      <td><%= link_to "Argentina_organismos", page_path("Argentina_organismos") %></td>
+      <td><label class="label label-danger"> Con errores</label></td>
+    </tr>
+
+      </tbody>
+
+    </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+
+<script>
+  $(function(){
+      $(".dataTable").dataTable({
+          "lengthChange" : false,
+          "filter" : false,
+          "ordering" : false,
+          "bInfo" : false,
+          "language":{
+              "sProcessing":     "Procesando...",
+              "sLengthMenu":     "Mostrar _MENU_ registros",
+              "sZeroRecords":    "No se encontraron resultados",
+              "sEmptyTable":     "Ningún dato disponible en esta tabla",
+              "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+              "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+              "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+              "sInfoPostFix":    "",
+              "sSearch":         "Buscar:",
+              "sUrl":            "",
+              "sInfoThousands":  ",",
+              "sLoadingRecords": "Cargando...",
+              "oPaginate": {
+                  "sFirst":    "Primero",
+                  "sLast":     "Último",
+                  "sNext":     "Siguiente",
+                  "sPrevious": "Anterior"
+              },
+              "oAria": {
+                  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+              }
+          }
+      });
+  })
 </script>
-
-<h1>Cucumber features</h1>
-<%= link_to 'Casos de Prueba', controller: 'articles' %>
-<%= link_to 'Nuevos Casos de Prueba', new_article_path %> </br>
-
-<%= link_to 'Nuevos Casos de Prueba',  '35.198.13.196/login.php'%>
-
-
-
-</br>
-<br>
-<li><a href="http://35.198.13.196/login.php">Acceso a TestLink</a></li>
-
-
-<h1>Ejecuciones de pruebas</h1>
-
-
-
