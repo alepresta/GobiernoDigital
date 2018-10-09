@@ -98,10 +98,10 @@ at_exit do
                     <td>#{estado_label}</td>
                     </tr>"
 
-        html_index = IO.read("#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb")
-        html_index.gsub!("#{pruebas_ejecuciones}","#{remplazo_pruebas}")
-        html_index_nuevo = "#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb"
-        IO.write("#{html_index_nuevo}",html_index)
+        html_index_path = "#{path_root_proyecto}/GobiernoDigital/app/views/welcome/index.html.erb"
+        html_index = IO.read("#{html_index_path}")
+        html_index = html_index.gsub!("#{pruebas_ejecuciones}","#{remplazo_pruebas}")
+        IO.write("#{html_index_path}",html_index)
 
 
         # html_index.gsub!("#{pruebas_anteriores}","#{remplazo_pruebas_anteriores}")
