@@ -6,153 +6,154 @@ Feature: Compartir en Rdes Sociales
 
   Se verificaran los siguientes tipos de contenido: Noticia, Persona Buscada, Página, Página de libro, subasta, webform, Área
 
+
+
+
   @compartir  @compartir_noticia @todos
-  Scenario: Noticia (https://www.argentina.gob.ar/node/100829)
-    Given ingresar al nodo 100829 El CINAR
+  Scenario: Noticia (https://www.argentina.gob.ar/node/100829) Facebook
     Then Verificar facebook href para nodo 100829
     Then Verificar facebook status de nodo 100829
     Then Verificar facebook Texto enviado de nodo 100829
     Then Verificar facebook Imagen enviada de nodo 100829
 
+  @compartir  @compartir_noticia @todos
+  Scenario: Noticia (https://www.argentina.gob.ar/node/100829) twitter
     Then Verificar twitter href para nodo 100829
     Then Verificar twitter status de nodo 100829
     Then Verificar twitter Texto enviado de nodo 100829
     Then Verificar twitter Imagen enviada de nodo 100829
 
+  @compartir  @compartir_noticia @todos
+  Scenario: Noticia (https://www.argentina.gob.ar/node/100829) google
     Then Verificar google href para nodo 100829
     Then Verificar google status de nodo 100829
     Then Verificar google Texto enviado de nodo 100829
     Then Verificar google Imagen enviada de nodo 100829
 
+
+
+
+
   @compartir  @compartir_persona_buscada @todos
-  Scenario:  Persona Buscada (https://www.argentina.gob.ar/node/100161)
-    Given ingresar al nodo 100161 Horacio Manuel Mella
+  Scenario:  Persona Buscada (https://www.argentina.gob.ar/node/100161) facebook
     Then Verificar facebook href para nodo 100161
     Then Verificar facebook status de nodo 100161
     Then Verificar facebook Texto enviado de nodo 100161
     Then Verificar facebook Imagen enviada de nodo 100161
 
+  @compartir  @compartir_persona_buscada @todos
+  Scenario:  Persona Buscada (https://www.argentina.gob.ar/node/100161) twitter
     Then Verificar twitter href para nodo 100161
     Then Verificar twitter status de nodo 100161
     Then Verificar twitter Texto enviado de nodo 100161
     Then Verificar twitter Imagen enviada de nodo 100161
 
-    Then Verificar google href para nodo 100161
+  @compartir  @compartir_persona_buscada @todos
+  Scenario:  Persona Buscada (https://www.argentina.gob.ar/node/100161) google
     Then Verificar google status de nodo 100161
     Then Verificar google Texto enviado de nodo 100161
     Then Verificar google Imagen enviada de nodo 100161
 
+
+
+
+
   @compartir  @compartir_pagina @todos
-  Scenario:  Página (https://www.argentina.gob.ar/node/9341)
-    Given ingresar al nodo 9341 Conocé los bancos
+  Scenario:  Página (https://www.argentina.gob.ar/node/12659) facebook
     Then Verificar facebook href para nodo 9341
     Then Verificar facebook status de nodo 9341
     Then Verificar facebook Texto enviado de nodo 9341
     Then Verificar facebook Imagen enviada de nodo 9341
 
+  @compartir  @compartir_pagina @todos
+  Scenario:  Página (https://www.argentina.gob.ar/node/12659) twitter
     Then Verificar twitter href para nodo 9341
     Then Verificar twitter status de nodo 9341
     Then Verificar twitter Texto enviado de nodo 9341
     Then Verificar twitter Imagen enviada de nodo 9341
 
+  @compartir  @compartir_pagina @todos
+  Scenario:  Página (https://www.argentina.gob.ar/node/12659) google
     Then Verificar google href para nodo 9341
     Then Verificar google status de nodo 9341
     Then Verificar google Texto enviado de nodo 9341
     Then Verificar google Imagen enviada de nodo 9341
 
+
+
+
+
   @compartir   @compartir_pagina_libro @todos
-  Scenario: Página de libro (https://www.argentina.gob.ar/node/100851)
-    Given ingresar al nodo 100851 Capacitación
+  Scenario: Página de libro (https://www.argentina.gob.ar/node/100851) facebook
     Then Verificar facebook href para nodo 100851
     Then Verificar facebook status de nodo 100851
     Then Verificar facebook Texto enviado de nodo 100851
     Then Verificar facebook Imagen enviada de nodo 100851
 
+  @compartir   @compartir_pagina_libro @todos
+  Scenario: Página de libro (https://www.argentina.gob.ar/node/100851) twitter
     Then Verificar twitter href para nodo 100851
     Then Verificar twitter status de nodo 100851
     Then Verificar twitter Texto enviado de nodo 100851
     Then Verificar twitter Imagen enviada de nodo 100851
 
+  @compartir   @compartir_pagina_libro @todos
+  Scenario: Página de libro (https://www.argentina.gob.ar/node/100851) google
     Then Verificar google href para nodo 100851
     Then Verificar google status de nodo 100851
     Then Verificar google Texto enviado de nodo 100851
     Then Verificar google Imagen enviada de nodo 100851
 
+
+
+
+
   @compartir  @compartir_servicio @todos
-  Scenario: Servicio (https://www.argentina.gob.ar/node/37227)
-    Given ingresar al nodo 37227 Registro para usos
+  Scenario: Servicio (https://www.argentina.gob.ar/node/37227)  facebook
     Then Verificar facebook href para nodo 37227
     Then Verificar facebook status de nodo 37227
     Then Verificar facebook Texto enviado de nodo 37227
     Then Verificar facebook Imagen enviada de nodo 37227
 
+  @compartir  @compartir_servicio @todos
+  Scenario: Servicio (https://www.argentina.gob.ar/node/37227)  twitter
     Then Verificar twitter href para nodo 37227
     Then Verificar twitter status de nodo 37227
     Then Verificar twitter Texto enviado de nodo 37227
     Then Verificar twitter Imagen enviada de nodo 37227
 
+  @compartir  @compartir_servicio @todos
+  Scenario: Servicio (https://www.argentina.gob.ar/node/37227)  google
     Then Verificar google href para nodo 37227
     Then Verificar google status de nodo 37227
     Then Verificar google Texto enviado de nodo 37227
     Then Verificar google Imagen enviada de nodo 37227
 
-  @compartir   @compartir_subasta @todos
-  Scenario: Subasta (https://www.argentina.gob.ar/node/37905)
-    Given ingresar al nodo 37905 Soldado de la Indep
-    Then Verificar facebook href para nodo 37905
-    Then Verificar facebook status de nodo 37905
-    Then Verificar facebook Texto enviado de nodo 37905
-    Then Verificar facebook Imagen enviada de nodo 37905
 
-    Then Verificar twitter href para nodo 37905
-    Then Verificar twitter status de nodo 37905
-    Then Verificar twitter Texto enviado de nodo 37905
-    Then Verificar twitter Imagen enviada de nodo 37905
 
-    Then Verificar google href para nodo 37905
-    Then Verificar google status de nodo 37905
-    Then Verificar google Texto enviado de nodo 37905
-    Then Verificar google Imagen enviada de nodo 37905
+
 
   @compartir   @compartir_webform @todos
-  Scenario:  Webform (https://www.argentina.gob.ar/node/100803)
-    Given ingresar al nodo 100803 Comisión de igualdad
+  Scenario:  Webform (https://www.argentina.gob.ar/node/100803)  facebook
     Then Verificar facebook href para nodo 100803
     Then Verificar facebook status de nodo 100803
     Then Verificar facebook Texto enviado de nodo 100803
     Then Verificar facebook Imagen enviada de nodo 100803
 
+  @compartir   @compartir_webform @todos
+  Scenario:  Webform (https://www.argentina.gob.ar/node/100803)  twitter
     Then Verificar twitter href para nodo 100803
     Then Verificar twitter status de nodo 100803
     Then Verificar twitter Texto enviado de nodo 100803
     Then Verificar twitter Imagen enviada de nodo 100803
 
+  @compartir   @compartir_webform @todos
+  Scenario:  Webform (https://www.argentina.gob.ar/node/100803)  google
     Then Verificar google href para nodo 100803
     Then Verificar google status de nodo 100803
     Then Verificar google Texto enviado de nodo 100803
     Then Verificar google Imagen enviada de nodo 100803
 
-  @compartir  @compartir_area @todos
-  Scenario:  Área (https://www.argentina.gob.ar/node/3267)
-    Given ingresar al nodo 3267 Ministerio de Producción
-    Then Verificar facebook href para nodo 3267
-    Then Verificar facebook status de nodo 3267
-    Then Verificar facebook Texto enviado de nodo 3267
-    Then Verificar facebook Imagen enviada de nodo 3267
 
-    Then Verificar twitter href para nodo 3267
-    Then Verificar twitter status de nodo 3267
-    Then Verificar twitter Texto enviado de nodo 3267
-    Then Verificar twitter Imagen enviada de nodo 3267
-
-    Then Verificar instagram href para nodo 3267
-    Then Verificar instagram status de nodo 3267
-    Then Verificar instagram Texto enviado de nodo 3267
-    Then Verificar instagram Imagen enviada de nodo 3267
-
-    Then Verificar youtube href para nodo 3267
-    Then Verificar youtube status de nodo 3267
-    Then Verificar youtube Texto enviado de nodo 3267
-    Then Verificar youtube Imagen enviada de nodo 3267
 
 #    cucumber -t @compartir -f html  -o  /xxxxx/xxxxx/xxxxx/Argentina/test/report/compartir/compartir.html

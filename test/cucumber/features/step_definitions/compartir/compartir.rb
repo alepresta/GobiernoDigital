@@ -270,7 +270,7 @@ Then /^Verificar google Imagen enviada de nodo 100161$/ do
 end
 
 Then /^Verificar facebook href para nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   facebook = capturar(:link, "Compartir en Facebook")
   href_facebook = facebook.attribute("href")
   if href_facebook.include?('facebook') == true
@@ -281,7 +281,7 @@ Then /^Verificar facebook href para nodo 9341$/ do
 end
 
 Then /^Verificar facebook status de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   facebook = capturar(:link, "Compartir en Facebook")
   href_facebook = facebook.attribute("href")
   status_link(200,href_facebook)
@@ -289,7 +289,8 @@ end
 
 Then /^Verificar facebook Texto enviado de nodo 9341$/ do
   facebook
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
+=begin
   titulo = capturar(:xpath,'/html/body/main/div[2]/div/section/div/article/div[1]/div/h1').text
   titulo = titulo.match("^s*[a-zA-Z-].*+s*")
   facebook = capturar(:link, "Compartir en Facebook")
@@ -300,15 +301,16 @@ Then /^Verificar facebook Texto enviado de nodo 9341$/ do
   else
     puts fail "El texto del titulo es incorrecto ...[ERROR]"
   end
+=end
 end
 
 Then /^Verificar facebook Imagen enviada de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
 puts "Imagen no validada ...[PASSED]" 
 end
 
 Then /^Verificar twitter href para nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   twitter = capturar(:link, "Compartir en Twitter")
   href_twitter = twitter.attribute("href")
   if href_twitter.include?('twitter') == true
@@ -319,7 +321,7 @@ Then /^Verificar twitter href para nodo 9341$/ do
 end
 
 Then /^Verificar twitter status de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   twitter = capturar(:link, "Compartir en Twitter")
   href_twitter = twitter.attribute("href")
   status_link(200,href_twitter)
@@ -327,7 +329,7 @@ end
 
 Then /^Verificar twitter Texto enviado de nodo 9341$/ do
   twitter
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   twitter = capturar(:link, "Compartir en Twitter")
   href_twitter = twitter.attribute("href")
   twitter.click
@@ -339,12 +341,12 @@ Then /^Verificar twitter Texto enviado de nodo 9341$/ do
 end
 
 Then /^Verificar twitter Imagen enviada de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
 puts "Imagen no validada ...[PASSED]" 
 end
 
 Then /^Verificar google href para nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
   google = capturar(:link, "Compartir en Google Plus")
   href_google = google.attribute("href")
   if href_google.include?('google') == true
@@ -355,7 +357,7 @@ Then /^Verificar google href para nodo 9341$/ do
 end
 
 Then /^Verificar google status de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
 =begin
   google = capturar(:link, "Compartir en Google Plus")
   href_google = google.attribute("href")
@@ -365,7 +367,7 @@ end
 
 Then /^Verificar google Texto enviado de nodo 9341$/ do
   #google
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
 =begin
   google = capturar(:link, "Compartir en Google Plus")
   google.click
@@ -379,9 +381,12 @@ Then /^Verificar google Texto enviado de nodo 9341$/ do
 end
 
 Then /^Verificar google Imagen enviada de nodo 9341$/ do
-   nodo_front(9341) # Conocé los bancos participantes y las condiciones crediticias
+   nodo_front(12659) # Conocé los bancos participantes y las condiciones crediticias
 puts "Imagen no validada ...[PASSED]" 
 end
+
+
+
 
 Then /^Verificar facebook href para nodo 100851$/ do
   nodo_front(100851) # Capacitación en gestión de Organizaciones Sociales Territoriales
@@ -610,68 +615,6 @@ Then /^Verificar google Imagen enviada de nodo 37227$/ do
 puts "Imagen no validada ...[PASSED]" 
 end
 
-Then /^Verificar facebook href para nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook status de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook Texto enviado de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook Imagen enviada de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  #puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter href para nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter status de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter Texto enviado de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter Imagen enviada de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar google href para nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar google status de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar google Texto enviado de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar google Imagen enviada de nodo 37905$/ do
-  # nodo_front(37905) # Soldado de la Independencia Nº 500 entre las calles San Benito de Palermo y José Ortega y Gasset.
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Subasta no tiene la opcion de compartir".yellow
-end
 
 Then /^Verificar facebook href para nodo 100803$/ do
   nodo_front(100803) # Comisión de igualdad de oportunidades y prácticas responsables
@@ -785,88 +728,4 @@ end
 Then /^Verificar google Imagen enviada de nodo 100803$/ do
   nodo_front(100803) # Comisión de igualdad de oportunidades y prácticas responsables
 puts "Imagen no validada ...[PASSED]" 
-end
-
-Then /^Verificar facebook href para nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook status de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook Texto enviado de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar facebook Imagen enviada de nodo 3267$/ do
-  # nodo_front(3267)
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter href para nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter status de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter Texto enviado de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar twitter Imagen enviada de nodo 3267$/ do
-  # nodo_front(3267)
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar instagram href para nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar instagram status de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar instagram Texto enviado de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar instagram Imagen enviada de nodo 3267$/ do
-  # nodo_front(3267)
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar youtube href para nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar youtube status de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar youtube Texto enviado de nodo 3267$/ do
-  # nodo_front(3267)
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
-end
-
-Then /^Verificar youtube Imagen enviada de nodo 3267$/ do
-  # nodo_front(3267)
-  # puts "Imagen no validada ...[PASSED]"
-  puts "El tipo de contenido Servicio no tiene la opcion de compartir".yellow
 end
