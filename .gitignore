@@ -7,6 +7,6 @@ test/cucumber/features/support/env.rb
 test/report/json_reportes/*
 log/*
 log/development.log
-app/views/pages/pages/*.html
+app/views/pages/*
 test/cucumber/imagenes/*.png
 test/cucumber/imagenes/*.jpg
