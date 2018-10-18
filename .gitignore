@@ -4,7 +4,9 @@ tmp/*
 .idea/workspace.xml
 app/views/welcome/index.html.erb
 test/cucumber/features/support/env.rb
-app/views/pages/*
 test/report/json_reportes/*
 log/*
 log/development.log
+app/views/pages/pages/*.html
+test/cucumber/imagenes/*.png
+test/cucumber/imagenes/*.jpg
