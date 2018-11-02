@@ -60,6 +60,8 @@ group :test do
   gem 'chromedriver-helper'
   gem 'cucumber'
   gem 'selenium-webdriver'
+  gem 'geckodriver-helper', '~> 0.21.0'
+  gem 'chromedriver-helper'
   gem 'dater'
   gem 'byebug'
   gem 'page-object'
