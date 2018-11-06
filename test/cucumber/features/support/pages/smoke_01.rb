@@ -228,7 +228,10 @@ end
 
 
 def refresh
-  @browser.navigate.refresh
+  url = @browser.current_url
+  go(url)
+  esperar(1)
+  #@browser.navigate.refresh
 end
 
 
