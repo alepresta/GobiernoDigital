@@ -227,7 +227,9 @@ def path_root_proyecto
 end
 
 
-
+def refresh
+  @browser.navigate.refresh
+end
 
 
 
