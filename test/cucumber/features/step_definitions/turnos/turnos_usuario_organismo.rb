@@ -1,5 +1,4 @@
 Then /^verificar crear area usuario organismo$/ do
-
   pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
   go(pagina)
   usuario = "modorganismo@mailinator.com"
@@ -16,9 +15,7 @@ Then /^verificar crear area usuario organismo$/ do
   cap.send_keys password
   bot = capturar(:class,'btn-success')
   bot.click
-
   esperar(10)
-
   # prueba_modernizacion = capturar(:xpath,'/html/body/app-root/main/div/div/app-organismos/div/app-tabla-organismos/table/tbody/tr/td[1]/a')
   # prueba_modernizacion.click
   url = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas'
@@ -26,7 +23,6 @@ Then /^verificar crear area usuario organismo$/ do
   esperar(3)
   crear_area = capturar(:xpath, '/html/body/app-root/main/div/div/app-areas/div/app-tabla-areas/div[3]/div[1]/button')
   crear_area.click
-
   nombre_area_texto = '0 Club Atletico River Plate'
   abreviatura_area_texto = 'CARP'
   nombre_area = capturar(:id, 'nombre')
@@ -87,7 +83,6 @@ Then /^verificar crear area usuario organismo$/ do
   end
   puts "Se valida que el usuario: #{usuario} con rol: Responsable Organismo puede crear/eliminar/modificar ÁREAS...[PASSED]".green
 esperar(1)
-
 end
 
 Then /^verificar crear trámites usuario organismo$/ do
@@ -251,7 +246,59 @@ end
 
 
 Then /^verificar crear usuarios como usuario organismo$/ do
-  # do something
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modorganismo@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(4)
+  select_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/a')
+  select_usuarios.click
+  select_nivel1_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/ul/li[1]/a')
+  select_nivel1_usuarios.click
+  esperar(4)
+  agregar_usuario = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-usuarios/div/app-tabla-usuarios/div[1]/button')
+  agregar_usuario.click
+  nombre = "0 Enzo"
+  apellido = "0 Francescoli"
+  email = "automatic.test.bot@gmail.com"
+  nombre_usuario = capturar(:id , 'nombre')
+  nombre_usuario.send_keys nombre
+  nombre_usuario.clear()
+  nombre_usuario.send_keys nombre
+  apellido_usuario = capturar(:id , 'apellido')
+  apellido_usuario.send_keys apellido
+  apellido_usuario.clear()
+  apellido_usuario.send_keys apellido
+  email_usuario = capturar(:id , 'username')
+  email_usuario.send_keys email
+  email_usuario.clear()
+  email_usuario.send_keys email
+  rol = capturar(:xpath, '//*[@id="rol"]/option[4]')
+  rol.click
+  asignar_área = capturar(:xpath, '//*[@id="area"]/option[2]')
+  asignar_área.click
+  asignar_punto_de_atención = capturar(:xpath, '//*[@id="puntoAtencion"]/option[3]')
+  asignar_punto_de_atención.click
+  asignar_ventanillas = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[6]/div/div/app-select-multiple/div/div/div/div[1]/select/option[3]')
+  asignar_ventanillas.click
+  crear = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[7]/button[2]/span')
+  crear.click
+  puts "Se valida que se puede crear usuario...[PASSED]".green
+  puts " mail: #{email}"
+  puts " nombre: #{nombre}"
+  puts " apellido: #{apellido}"
 end
 
 
