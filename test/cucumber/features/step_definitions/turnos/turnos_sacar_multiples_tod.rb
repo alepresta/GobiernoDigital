@@ -2,7 +2,7 @@ Then /^Vaciar atendiendo todos los turnos$/ do
   go("https://qa-usuarios-turnos.argentina.gob.ar")
   esperar(1)
   #captura_de_pantalla("qa-usuarios-turnos")
-  usuario = "sntagente@yopmail.com"
+  usuario = "modagente_011@mailinator.com"
   password = "QAsnt2018"
   asd = capturar(:id,'usuario')
   esperar(1)
@@ -450,7 +450,7 @@ Then /^Sacar turnos por TOD$/ do
   go("https://qa-usuarios-turnos.argentina.gob.ar")
   esperar(1)
   #captura_de_pantalla("qa-usuarios-turnos")
-  usuario = "sntagente@yopmail.com"
+  usuario = "modagente_011@mailinator.com"
   password = "QAsnt2018"
   asd = capturar(:id,'usuario')
   esperar(1)
@@ -503,7 +503,7 @@ Then /^Atender por ventanilla$/ do
   go("https://qa-usuarios-turnos.argentina.gob.ar")
   esperar(1)
   #captura_de_pantalla("qa-usuarios-turnos")
-  usuario = "sntagente@yopmail.com"
+  usuario = "modagente_011@mailinator.com"
   password = "QAsnt2018"
   asd = capturar(:id,'usuario')
   esperar(1)
