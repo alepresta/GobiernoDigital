@@ -81,7 +81,9 @@ Then /^verificar crear area usuario organismo$/ do
       end
     end
   end
+  line
   puts "Se valida que el usuario: #{usuario} con rol: Responsable Organismo puede crear/eliminar/modificar ÁREAS...[PASSED]".green
+  line
 esperar(1)
 end
 
@@ -122,8 +124,10 @@ Then /^verificar crear trámites usuario organismo$/ do
   requisitos = capturar(:xpath, '//*[@id="requisitos"]')
   requisitos_texto = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,'
   requisitos.send_keys requisitos_texto
-  crear = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/form/div[3]/div[5]/div/button[2]/span')
+  #crear = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/form/div[3]/div[5]/div/button[2]/span')
+  crear = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/form/div[3]/div[5]/div/button[2]')
   crear.click
+  esperar(10)
   puts "Se creo el Trámite #{nombre_texto}".yellow
   refresh
   esperar(2)
@@ -154,94 +158,100 @@ Then /^verificar crear trámites usuario organismo$/ do
   tramite_pa.click
   crear_pa = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-punto-atencion/div/form/div[5]/button[2]')
   crear_pa.click
+  esperar(10)
   puts "Se creo el Punto de Atención #{nombre_pa_texto}"
   refresh
   esperar(2)
-  solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-  solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-  solapa_tramites.click
-  solapa_punto_atencion.click
+  url_pa = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/tabs/(puntosAtencionOutlet:puntosAtencion/44/areas/64)'
+  go(url_pa)
   pa_01 = capturar(:xpath ,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[1]/td[1]').text
   pa_02 = capturar(:xpath ,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[2]/td[1]').text
   pa_03 = capturar(:xpath ,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[3]/td[1]').text
   pa_04 = capturar(:xpath ,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[4]/td[1]').text
-  if nombre_pa_texto.include? pa_01
+
+  if pa_01.eql? nombre_pa_texto
     refresh
+    go(url_pa)
+    esperar(1)
+    go(url_pa)
     capturar(:css, '.table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3) > button:nth-child(3)').click
+    esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
     puts "Se elimino el Punto de Atención #{pa_01}"
   end
-  if nombre_pa_texto.include? pa_02
+  if pa_02.eql? nombre_pa_texto
     refresh
+    go(url_pa)
+    esperar(1)
+    go(url_pa)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[2]/td[3]/button[3]').click
+    esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
     puts "Se elimino el Punto de Atención #{pa_02}"
   end
-  if nombre_pa_texto.include? pa_03
+  if pa_03.eql? nombre_pa_texto
     refresh
+    go(url_pa)
+    esperar(1)
+    go(url_pa)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[3]/td[3]/button[3]').click
+    esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
     puts "Se elimino el Punto de Atención #{pa_03}"
   end
-  if nombre_pa_texto.include? pa_04
+  if pa_04.eql? nombre_pa_texto
     refresh
+    go(url_pa)
+    esperar(1)
+    go(url_pa)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[4]/td[3]/button[3]').click
+    esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
     puts "Se elimino el Punto de Atención #{pa_04}"
   end
-  refresh
-  solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-  solapa_tramites.click
-  solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-  solapa_punto_atencion.click
-  solapa_tramites.click
-   esperar(1)
+  url_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/tabs/(tramitesOutlet:tramites/44/areas/64)'
+  go(url_tramites)
+  esperar(1)
   elemento_01 = capturar(:xpath , '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[1]/td[1]').text
   elemento_02 = capturar(:xpath , '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[2]/td[1]').text
   elemento_03 = capturar(:xpath , '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[3]/td[1]').text
   elemento_04 = capturar(:xpath , '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[4]/td[1]').text
-  if nombre_texto.include? elemento_01
-    solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-    solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-    solapa_tramites.click
-    solapa_punto_atencion.click
-    solapa_tramites.click
+  if nombre_texto.eql? elemento_01
+    go(url_tramites)
+    esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[1]/td[4]/button[2]').click
+    esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
     puts "Se elimino el Trámite #{elemento_01}".yellow
-    if nombre_texto.include? elemento_02
-      solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-      solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-      solapa_tramites.click
-      solapa_punto_atencion.click
-      solapa_tramites.click
-      capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[2]/td[4]/button[2]').click
-      capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
-      puts "Se elimino el Trámite #{elemento_02}".yellow
-      if nombre_texto.include? elemento_03
-        solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-        solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-        solapa_tramites.click
-        solapa_punto_atencion.click
-        solapa_tramites.click
-        capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[3]/td[4]/button[1]').click
-        capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
-        puts "Se elimino el Trámite #{elemento_03}".yellow
-        if nombre_texto.include? elemento_04
-          solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[1]/a')
-          solapa_punto_atencion = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/ul/li[2]/a')
-          solapa_tramites.click
-          solapa_punto_atencion.click
-          solapa_tramites.click
-          capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[4]/td[4]/button[1]').click
-          capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
-          puts "Se elimino el Trámite #{elemento_04}".yellow
-        end
-      end
-    end
   end
+  if nombre_texto.eql? elemento_02
+    go(url_tramites)
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[2]/td[4]/button[2]').click
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    puts "Se elimino el Trámite #{elemento_02}".yellow
+  end
+  if nombre_texto.eql? elemento_03
+    go(url_tramites)
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[3]/td[4]/button[1]').click
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    puts "Se elimino el Trámite #{elemento_03}".yellow
+  end
+  if nombre_texto.eql? elemento_04
+    go(url_tramites)
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[4]/td[4]/button[1]').click
+    esperar(2)
+    capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    puts "Se elimino el Trámite #{elemento_04}".yellow
+  end
+  line
   puts "Se valida que el usuario: #{usuario} con rol: Responsable Organismo puede crear/eliminar/modificar TRÁMITES...[PASSED]".green
   puts "Se valida que el usuario: #{usuario} con rol: Responsable Organismo puede crear/eliminar/modificar PUNTOS DE ATENCIÓN...[PASSED]".green
+  line
 end
 
 
@@ -295,10 +305,12 @@ Then /^verificar crear usuarios como usuario organismo$/ do
   asignar_ventanillas.click
   crear = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[7]/button[2]/span')
   crear.click
-  puts "Se valida que se puede crear usuario...[PASSED]".green
   puts " mail: #{email}"
   puts " nombre: #{nombre}"
   puts " apellido: #{apellido}"
+  line
+  puts "Se valida que se puede crear usuario...[PASSED]".green
+  line
 end
 
 
