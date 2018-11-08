@@ -99,6 +99,7 @@ When /^en el segundo paso$/ do
     capturar(:css, '.table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3) > button:nth-child(3)').click
     esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Punto de Atención #{pa_01}"
   end
   if pa_02.eql? nombre_pa_texto
@@ -109,6 +110,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[2]/td[3]/button[3]').click
     esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Punto de Atención #{pa_02}"
   end
   if pa_03.eql? nombre_pa_texto
@@ -119,6 +121,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[3]/td[3]/button[3]').click
     esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Punto de Atención #{pa_03}"
   end
   if pa_04.eql? nombre_pa_texto
@@ -129,6 +132,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/table/tbody/tr[4]/td[3]/button[3]').click
     esperar(2)
     capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-puntos-atencion/div/app-tabla-puntos-atencion/app-modal-eliminar-punto-atencion/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Punto de Atención #{pa_04}"
   end
   url_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/tabs/(tramitesOutlet:tramites/44/areas/64)'
@@ -144,6 +148,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[1]/td[4]/button[2]').click
     esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Trámite #{elemento_01}".yellow
   end
   if nombre_texto.eql? elemento_02
@@ -152,6 +157,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[2]/td[4]/button[2]').click
     esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Trámite #{elemento_02}".yellow
   end
   if nombre_texto.eql? elemento_03
@@ -160,6 +166,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[3]/td[4]/button[1]').click
     esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Trámite #{elemento_03}".yellow
   end
   if nombre_texto.eql? elemento_04
@@ -168,6 +175,7 @@ When /^en el segundo paso$/ do
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/table/tbody/tr[4]/td[4]/button[1]').click
     esperar(2)
     capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-area/div[3]/app-tramites/div/app-tabla-tramites/app-modal-eliminar-tramite/app-modal/div/div/div/div[3]/div/button[2]').click
+    esperar(2)
     puts "Se elimino el Trámite #{elemento_04}".yellow
   end
   line
