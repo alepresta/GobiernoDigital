@@ -305,10 +305,10 @@ Then /^verificar crear usuarios como usuario organismo$/ do
   email_usuario.send_keys email
   rol = capturar(:xpath, '//*[@id="rol"]/option[4]')
   rol.click
-  asignar_área = capturar(:xpath, '//*[@id="area"]/option[2]')
-  asignar_área.click
-  asignar_punto_de_atención = capturar(:xpath, '//*[@id="puntoAtencion"]/option[3]')
-  asignar_punto_de_atención.click
+  asignar_area = capturar(:xpath, '//*[@id="area"]/option[2]')
+  asignar_area.click
+  asignar_punto_de_atencion = capturar(:xpath, '//*[@id="puntoAtencion"]/option[3]')
+  asignar_punto_de_atencion.click
   asignar_ventanillas = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[6]/div/div/app-select-multiple/div/div/div/div[1]/select/option[3]')
   asignar_ventanillas.click
   crear = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[7]/button[2]/span')
