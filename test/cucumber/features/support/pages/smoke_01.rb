@@ -235,6 +235,10 @@ def refresh
 end
 
 
+def cierrate_sesamo
+  @browser.close
+end
+
 
 
 
