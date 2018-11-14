@@ -295,14 +295,14 @@ Then /^Verificar solapa Categorías \(ToD\)$/ do
   esperar(4)
   tramite_sin_sentido = '0 Tramite sin sentido'
   nombre_de_la_categoria_01 = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-categorias/div/app-tabla-categorias/table/tbody/tr[1]/td[1]').text
-  puts "Trámite encontrado: #{nombre_de_la_categoria_01}"
+
   if nombre_de_la_categoria_01 == tramite_sin_sentido
     eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-categorias/div/app-tabla-categorias/table/tbody/tr[1]/td[3]/button[2]')
     eliminar.click
     confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-categorias/div/app-tabla-categorias/app-modal-eliminar-categoria/app-modal/div/div/div/div[3]/div/button[2]')
     confirmar_eliminar.click
     esperar(4)
-    puts "Trámite eliminado: #{nombre_de_la_categoria_01}"
+
   end
   pagina_solapa = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(categoriasOutlet:categorias/puntoAtencion/89)'
   go(pagina_solapa)
@@ -343,6 +343,7 @@ Then /^Verificar solapa Categorías \(ToD\)$/ do
   esperar(1)
   confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-categorias/div/app-tabla-categorias/app-modal-eliminar-categoria/app-modal/div/div/div/div[3]/div/button[2]')
   confirmar_eliminar.click
+  puts "Trámite encontrado: #{nombre_de_la_categoria_01}"
   puts "Trámite eliminado: #{nombre_de_la_categoria_01}"
   esperar(1)
   puts 'Se valida que a cada categoria creada se le puede agregar uno o varios tramites si estan disponibles..[ok]'.green
@@ -353,43 +354,102 @@ end
 Then /^Verificar solapa Grupos de Trámites$/ do
   pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
   go(pagina)
-  # usuario = "modpda_01@mailinator.com"
-  # password = "QAsnt2018"
-  # asd = capturar(:id,'usuario')
-  # esperar(1)
-  # asd.send_keys usuario
-  # asd.clear()
-  # asd.send_keys usuario
-  # cap = capturar(:id,'password')
-  # cap.send_keys password
-  # esperar(1)
-  # cap.clear()
-  # cap.send_keys password
-  # bot = capturar(:class,'btn-success')
-  # bot.click
-  # esperar(20)
-  #
-  # solapa_horarios = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[1]')
-  # solapa_horarios.click
-  # esperar(4)
-  # solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[2]')
-  # solapa_tramites.click
-  # esperar(4)
-  # solapa_categorias_tod = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[3]')
-  # solapa_categorias_tod.click
-  # esperar(4)
-  # solapa_grupo_de_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[4]')
-  # solapa_grupo_de_tramites.click
-  # esperar(4)
-  # solapa_dias_deshabilitados = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[5]')
-  # solapa_dias_deshabilitados.click
-  # esperar(4)
-  # solapa_grupo_de_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[4]')
-  # solapa_grupo_de_tramites.click
-  # esperar(4)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(20)
+  nombre_del_grupo_texto = 'Grupo de Trámites complicados.com'
+  solapa_horarios = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[1]')
+  solapa_horarios.click
+  esperar(4)
+  solapa_grupo_de_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[4]')
+  solapa_grupo_de_tramites.click
+  esperar(4)
 
+  nombre_del_grupo_01 = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[1]/td[1]').text
+  nombre_del_grupo_02 = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[2]/td[1]').text
 
+  if nombre_del_grupo_01 == nombre_del_grupo_texto
+    puts "Nombre del grupo 1: #{nombre_del_grupo_01}"
+    eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[1]/td[4]/button[2]')
+    eliminar.click
+    confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/app-modal-eliminar-grupo-tramites/app-modal/div/div/div/div[3]/div/button[2]')
+    confirmar_eliminar.click
+    esperar(2)
+    url_grupo_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(grupoTramitesOutlet:grupoTramites/puntoAtencion/89)'
+    go(url_grupo_tramites)
+  end
+
+  if nombre_del_grupo_02 == nombre_del_grupo_texto
+    puts "Nombre del grupo 2: #{nombre_del_grupo_02}"
+    eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[2]/td[4]/button[2]')
+    eliminar.click
+    confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/app-modal-eliminar-grupo-tramites/app-modal/div/div/div/div[3]/div/button[2]')
+    confirmar_eliminar.click
+    esperar(2)
+    url_grupo_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(grupoTramitesOutlet:grupoTramites/puntoAtencion/89)'
+    go(url_grupo_tramites)
+  end
+
+  crear_grupo = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/div[1]/button')
+  crear_grupo.click
+  esperar(1)
+
+  nombre_del_grupo = capturar(:id, 'nombre')
+  nombre_del_grupo.send_keys nombre_del_grupo_texto
+  intervalo_de_atencion = capturar(:xpath, '//*[@id="intervalo"]/option[2]')
+  intervalo_de_atencion.click
+  horizonte = capturar(:id, 'horizonte')
+  horizonte.send_keys '90'
+  tramites_disponibles = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-agregar-grupo-tramites/div/form/table[2]/tbody/tr[1]/td[2]/button')
+  tramites_disponibles.click
+  quitar_tramites_disponibles = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-agregar-grupo-tramites/div/form/table[1]/tbody/tr[1]/td[2]/button')
+  quitar_tramites_disponibles.click
+  tramites_disponibles = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-agregar-grupo-tramites/div/form/table[2]/tbody/tr[1]/td[2]/button')
+  tramites_disponibles.click
+  crear = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-agregar-grupo-tramites/div/form/div[3]/button[2]')
+  crear.click
+  esperar(4)
+
+  nombre_del_grupo_01 = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[1]/td[1]').text
+  nombre_del_grupo_02 = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[2]/td[1]').text
+
+  if nombre_del_grupo_01 == nombre_del_grupo_texto
+    puts "se creo y se elimino el trámite (grupo1): #{nombre_del_grupo_01}".yellow
+    eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[1]/td[4]/button[2]')
+    eliminar.click
+    confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/app-modal-eliminar-grupo-tramites/app-modal/div/div/div/div[3]/div/button[2]')
+    confirmar_eliminar.click
+    esperar(2)
+    url_grupo_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(grupoTramitesOutlet:grupoTramites/puntoAtencion/89)'
+    go(url_grupo_tramites)
+  end
+
+  if nombre_del_grupo_02 == nombre_del_grupo_texto
+    puts "se creo y se elimino el trámite (grupo2):  #{nombre_del_grupo_02}".yellow
+    eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/table/tbody/tr[2]/td[4]/button[2]')
+    eliminar.click
+    confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-grupo-tramites/div/app-tabla-grupo-tramites/app-modal-eliminar-grupo-tramites/app-modal/div/div/div/div[3]/div/button[2]')
+    confirmar_eliminar.click
+    esperar(2)
+    url_grupo_tramites = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(grupoTramitesOutlet:grupoTramites/puntoAtencion/89)'
+    go(url_grupo_tramites)
+  end
   cierrate_sesamo
+  esperar(2)
+
+  puts "Se valida que se puede crear grupos de trámites a los cuales agregar o quitar tramites.. [PASSED]".green
 end
 
 Then /^Verificar solapa Días deshabilitados$/ do
