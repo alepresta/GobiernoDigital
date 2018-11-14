@@ -469,6 +469,7 @@ Then /^Sacar turnos por TOD$/ do
   tod.click
   primera
   ultima
+
   esperar(1)
   usuarios.each do |asa|
     solicitar_turno = capturar(:xpath,'/html/body/app-root/app-bienvenida/div/div/button')

@@ -18,7 +18,7 @@ Feature: Usuario punto de atención
   Scenario: Verificar la sección ADMINISTRAR solapa Trámites
     Then Verificar solapa Trámites
 
-  @turnos_usuario_pa         @turnos_usuario_pa_administrar
+  @turnos_usuario_pa         @turnos_usuario_pa_administrar             @turnos_usuario_pa_administrar_tod
   Scenario: Verificar la sección ADMINISTRAR solapa Categorías (ToD)
     Then Verificar solapa Categorías (ToD)
 
