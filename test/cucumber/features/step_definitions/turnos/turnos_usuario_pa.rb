@@ -123,10 +123,8 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE(#{namedo}) NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == false
-        line
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo}) ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
       end
     end
     if se_encontro_el_tramite == false
@@ -407,10 +405,12 @@ Then /^Verificar solapa Grupos de Trámites$/ do
   esperar(1)
 
   nombre_del_grupo = capturar(:id, 'nombre')
+  nombre_del_grupo.clear()
   nombre_del_grupo.send_keys nombre_del_grupo_texto
   intervalo_de_atencion = capturar(:xpath, '//*[@id="intervalo"]/option[2]')
   intervalo_de_atencion.click
   horizonte = capturar(:id, 'horizonte')
+  horizonte.clear()
   horizonte.send_keys '90'
   tramites_disponibles = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-agregar-grupo-tramites/div/form/table[2]/tbody/tr[1]/td[2]/button')
   tramites_disponibles.click
@@ -455,41 +455,82 @@ end
 Then /^Verificar solapa Días deshabilitados$/ do
   pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
   go(pagina)
-  # usuario = "modpda_01@mailinator.com"
-  # password = "QAsnt2018"
-  # asd = capturar(:id,'usuario')
-  # esperar(1)
-  # asd.send_keys usuario
-  # asd.clear()
-  # asd.send_keys usuario
-  # cap = capturar(:id,'password')
-  # cap.send_keys password
-  # esperar(1)
-  # cap.clear()
-  # cap.send_keys password
-  # bot = capturar(:class,'btn-success')
-  # bot.click
-  # esperar(20)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(20)
+
+  solapa_horarios = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[1]')
+  solapa_horarios.click
+  esperar(4)
+  solapa_dias_deshabilitados = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[5]')
+  solapa_dias_deshabilitados.click
+  esperar(4)
+
+
+  url_dias = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(diasDeshabilitadosOutlet:diasDeshabilitados/puntoAtencion/89)'
+
+  deshabilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[1]/button')
+  deshabilitar_dia.click
+
+  dia_deshabilitado = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[2]/div/app-lista-feriados/div/ul/li/span').text
+  dia_deshabilitado = dia_deshabilitado.gsub('2018', '')
+  dia_deshabilitado = dia_deshabilitado.gsub(/[a-zA-Z]/, '')
+  dia_deshabilitado = dia_deshabilitado.gsub(' ', '')
+
+  go(url_dias)
+  esperar(2)
+
+  habilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[2]/div/app-lista-feriados/div/ul/li/button')
+  habilitar_dia.click
+  esperar(2)
+
+  go(url_dias)
+  esperar(2)
+
+  # deshabilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[1]/button')
+  # deshabilitar_dia.click
   #
+  # confirmar_deshabilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/app-modal-reasignar-turnos/app-modal/div/div/div/div[3]/div/div[1]/button[2]')
+  # esperar(1)
+  # confirmar_deshabilitar_dia.click
+  # esperar(1)
+  # finalizar_reasignacion = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/app-modal-reasignar-turnos/app-modal/div/div/div/div[3]/div/div[2]/button[2]')
+  # finalizar_reasignacion.click
+  # esperar(1)
   #
-  # solapa_dias_deshabilitados = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[5]')
-  # solapa_dias_deshabilitados.click
-  # esperar(4)
-  # solapa_horarios = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[1]')
-  # solapa_horarios.click
-  # esperar(4)
-  # solapa_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[2]')
-  # solapa_tramites.click
-  # esperar(4)
-  # solapa_categorias_tod = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[3]')
-  # solapa_categorias_tod.click
-  # esperar(4)
-  # solapa_grupo_de_tramites = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[4]')
-  # solapa_grupo_de_tramites.click
-  # esperar(4)
-  # solapa_dias_deshabilitados = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[5]')
-  # solapa_dias_deshabilitados.click
-  # esperar(4)
+  # go(url_dias)
+  # esperar(2)
+
+
+
+  puts "Se deshabilito el dia #{dia_deshabilitado}..............................[OK]".green
+  puts  "verificar fechas reasignar fechas....................................................[SIN EJECUTAR]".yellow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   cierrate_sesamo
 end

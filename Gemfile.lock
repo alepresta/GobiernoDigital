@@ -111,6 +111,8 @@ GEM
     faker (1.9.1)
       i18n (>= 0.7)
     ffi (1.9.25)
+    firefox (0.1.0)
+      inifile
     geckodriver-helper (0.21.0)
       archive-zip (~> 0.7)
     gherkin (5.1.0)
@@ -121,6 +123,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    inifile (3.0.0)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -294,7 +297,8 @@ DEPENDENCIES
   cucumber
   cukehub
   dater
-  geckodriver-helper (~> 0.21.0)
+  firefox
+  geckodriver-helper
   high_voltage
   jbuilder (~> 2.5)
   json

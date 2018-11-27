@@ -26,7 +26,7 @@ Feature: Usuario punto de atención
   Scenario: Verificar la sección ADMINISTRAR solapa Grupos de Trámites
     Then Verificar solapa Grupos de Trámites
 
-  @turnos_usuario_pa         @turnos_usuario_pa_administrar
+  @turnos_usuario_pa         @turnos_usuario_pa_administrar             @turnos_usuario_pa_administrar_dias
   Scenario: Verificar la sección ADMINISTRAR solapa Días deshabilitados
     Then Verificar solapa Días deshabilitados
 
