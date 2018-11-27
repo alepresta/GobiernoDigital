@@ -4,6 +4,8 @@ Feature: Organismos
   02- Secretaría General
   03- Secretaría Legal y Técnica
   04- Sedronar
+
+  00- Jefatura de Gabinete de Ministros
   05- Secretaría de Relaciones Políticas y Parlamentarias
   06- Secretaría de Asuntos Estratégicos
   07- Secretaría de Comunicación Pública
@@ -13,6 +15,7 @@ Feature: Organismos
   11- Agencia de Administración de Bienes del Estado
   12- Unidad Plan Belgrano
   13- Dirección Nacional de Inversión Pública
+
   14- Ministerio de Educación, Cultura, Ciencia y Tecnología
   15- Ministerio de Defensa
   16- Ministerio de Salud y Desarrollo Social
@@ -23,9 +26,11 @@ Feature: Organismos
   21- Ministerio de Relaciones Exteriores y Culto
   22- Ministerio de Seguridad
   23- Ministerio de Transporte
+
   24- Corte Suprema de Justicia de la Nación
   25- Ministerio Público Fiscal – Procuración General de la Nación
   26- Ministerio Público de la Defensa
+
   27- Congreso de la Nación Argentina
   28- Honorable Senado de la Nación
   29- Honorable Cámara de Diputados de la Nación
