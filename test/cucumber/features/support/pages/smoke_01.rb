@@ -204,12 +204,6 @@ def eliminar_mail_de_turnos
 end
 
 
-
-
-
-
-
-
 def ultima
   @browser.switch_to.window(@browser.window_handles.last)
 end
