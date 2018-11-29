@@ -452,7 +452,104 @@ Then /^Verificar solapa Grupos de Trámites$/ do
 end
 
 Then /^Verificar solapa Días deshabilitados$/ do
-  # do something
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  url_dias = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(diasDeshabilitadosOutlet:diasDeshabilitados/puntoAtencion/89)'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(20)
+
+  solapa_horarios = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[1]')
+  solapa_horarios.click
+  esperar(4)
+  solapa_dias_deshabilitados = capturar(:xpath, '/html/body/app-root/main/div/div/app-tabs-pda/ul/li[5]')
+  solapa_dias_deshabilitados.click
+  esperar(4)
+
+  fecha = capturar(:class, 'picker-switch').text
+  fecha = fecha.downcase
+  anio = fecha.gsub(/[a-zA-Z]/, '')
+  mes = fecha.gsub("#{anio}", '')
+  mes = mes.gsub(' ', '')
+  anio = anio.gsub(' ', '')
+  mes_01 = 'enero'
+  mes_02 = 'febrero'
+  mes_03 = 'marzo'
+  mes_04 = 'abril'
+  mes_05 = 'mayo'
+  mes_06 = 'junio'
+  mes_07 = 'julio'
+  mes_08 = 'agosto'
+  mes_09 = 'septiembre'
+  mes_10 = 'octubre'
+  mes_11 = 'noviembre'
+  mes_12 = 'diciembre'
+  if mes == mes_01
+  mes_numero = '1'
+    else if mes == mes_02
+           mes_numero = '2'
+      else if mes == mes_03
+             mes_numero = '3'
+        else if mes == mes_04
+               mes_numero = '4'
+          else if mes == mes_05
+                 mes_numero = '5'
+            else if mes == mes_06
+                   mes_numero = '6'
+              else if mes == mes_07
+                     mes_numero = '7'
+                else if mes == mes_08
+                       mes_numero = '8'
+                  else if mes == mes_09
+                         mes_numero = '9'
+                    else if mes == mes_10
+                           mes_numero = '10'
+                        else if mes == mes_11
+                               mes_numero = '11'
+                        if mes == mes_12
+                          mes_numero = '12'
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  deshabilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[1]/button')
+  deshabilitar_dia.click
+  dia_deshabilitado = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[2]/div/app-lista-feriados/div/ul/li/span').text
+  dia_deshabilitado = dia_deshabilitado.gsub('2018', '')
+  dia_deshabilitado = dia_deshabilitado.gsub(/[a-zA-Z]/, '')
+  dia_deshabilitado = dia_deshabilitado.gsub(' ', '')
+  puts "Se deshabilito el dia #{dia_deshabilitado} del mes #{mes} del año #{anio}..............................[OK]".green
+
+
+  go(url_dias)
+  esperar(2)
+  habilitar_dia = capturar(:xpath,'/html/body/app-root/main/div/div/app-tabs-pda/div[3]/app-dias-deshabilitados/div/div[2]/div[2]/div/app-lista-feriados/div/ul/li/button')
+  habilitar_dia.click
+  esperar(2)
+  puts "Se habilito el dia #{dia_deshabilitado} del mes #{mes} del año #{anio}..............................[OK]".green
+
+  puts  "verificar fechas reasignar fechas....................................................[SIN EJECUTAR]".yellow
+
 end
 
 Then /^Verificar la sección RECEPCIÓN$/ do
