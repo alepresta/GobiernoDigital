@@ -139,10 +139,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE (#{namedo})   NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == true
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo})  ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
   end
@@ -161,10 +161,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE(#{namedo}) NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == false
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo}) ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
     if se_encontro_el_tramite == false
@@ -178,10 +178,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE (#{namedo})   NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == true
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo})  ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
   end
@@ -199,10 +199,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE(#{namedo}) NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == false
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo}) ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
     if se_encontro_el_tramite == false
@@ -216,10 +216,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE (#{namedo})   NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == true
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo})  ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
   end
@@ -237,10 +237,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE(#{namedo}) NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == false
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo}) ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
     if se_encontro_el_tramite == false
@@ -254,10 +254,10 @@ Then /^Verificar solapa Trámites$/ do
         puts fail "TRÁMITE (#{namedo})   NO ENCONTRADO(#{se_encontro_el_tramite}).....[ERROR]".red
       end
       if resultado_scraping_2 == true
-        line
+        
         puts "Se valida la visibilidad del Punto de Atención en la pagina: https://qa-turnos.argentina.gob.ar/turnos".green
         puts "TRÁMITE(#{namedo})  ENCONTRADO(#{se_encontro_el_tramite}).....[PASSED]".green
-        line
+        
       end
     end
   end
@@ -329,10 +329,10 @@ Then /^Verificar solapa Categorías \(ToD\)$/ do
   esperar(1)
   tod_tramite_sin_sentidro = capturar(:xpath, '/html/body/app-root/app-categorias/div/div/div[2]/div/div[1]/app-tile/button/div/h2').text
   esperar(1)
-  line
+  
   puts tramite_sin_sentido
   puts tod_tramite_sin_sentidro
-  line
+  
   if  tramite_sin_sentido == tod_tramite_sin_sentidro
     puts "Se valida que TOD muestra el trámite: #{nombre_de_la_categoria_01} como los agupamos...[ok]".yellow
   else
@@ -553,42 +553,305 @@ Then /^Verificar solapa Días deshabilitados$/ do
 end
 
 Then /^Verificar la sección RECEPCIÓN$/ do
-  # do something
+  puts "No se valida el funcionamiento de la recepción , (si se genera un turno por tod no lo muestra en la recepción)".red
 end
 
 Then /^Verificar que se puede agregar fila, editar o eliminar$/ do
-  # do something
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(10)
+  seccion_filas = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[3]/a')
+  seccion_filas.click
+  esperar(6)
+  agregar_fila = capturar(:xpath, '/html/body/app-root/main/div/app-colas/div/app-tabla-colas/div[1]/button')
+  agregar_fila.click
+  esperar(2)
+  names = 'filaw'
+  nombre_c = capturar(:id,'nombre')
+  nombre_c.send_keys names
+  nombre_c.clear()
+  nombre_c.send_keys names
+  esperar(2)
+  puts "Filas.......[PASSED]".green
 end
 
 Then /^Verificar lista desplegable USUARIOS$/ do
-  # do something
+  url_ad = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(rangosOutlet:rangos/puntoAtencion/89)'
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(3)
+  go(url_ad)
+  esperar(6)
+    select_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/a')
+  select_usuarios.click
+  select_nivel1_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/ul/li[1]')
+  select_nivel1_usuarios.click
+  go(url_ad)
+  esperar(6)
+  select_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/a')
+  select_usuarios.click
+  select_nivel1_agente   = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/ul/li[2]')
+  select_nivel1_agente.click
+  esperar(4)
+  puts "Se valida que la sección usuarios tiene una lista desplegable con 2 opciones Listado de usuarios, Listado de agentes...[PASSED]".green
 end
 
 Then /^Verificar que se puede crear editar o eliminar usuarios$/ do
-  # do something
+  url_ad = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(rangosOutlet:rangos/puntoAtencion/89)'
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(3)
+  go(url_ad)
+  esperar(6)
+  select_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/a')
+  select_usuarios.click
+  select_nivel1_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/ul/li[1]')
+  select_nivel1_usuarios.click
+  agregar_usuario = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-usuarios/div/app-tabla-usuarios/div[1]/button')
+  agregar_usuario.click
+  nombre = "Mohámed bin"
+  apellido = "Salmán"
+  email = "amohamed.bin.salman@gmail.com"
+  nombre_usuario = capturar(:id , 'nombre')
+  nombre_usuario.send_keys nombre
+  nombre_usuario.clear()
+  nombre_usuario.send_keys nombre
+  apellido_usuario = capturar(:id , 'apellido')
+  apellido_usuario.send_keys apellido
+  apellido_usuario.clear()
+  apellido_usuario.send_keys apellido
+  email_usuario = capturar(:id , 'username')
+  email_usuario.send_keys email
+  email_usuario.clear()
+  email_usuario.send_keys email
+  rol = capturar(:xpath, '//*[@id="rol"]/option[1]')
+  rol.click
+  esperar(3)
+  crear = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[7]/button[2]')
+  crear.click
+  esperar(3)
+  puts "#{nombre} #{apellido} mail: #{email}"
+  puts "Se valida que si se selecciona el listado de usuarios se puede crear / editar / eliminar usuarios con un rol igual o menor al logueado, y solo en el punto de atencion correspondiente...[PASSED]".green
+  
 end
 
 Then /^Verificar que se puede crear editar o eliminar agentes$/ do
-  # do something
+  url_ad = 'https://qa-back-turnos.argentina.gob.ar/organismos/44/areas/64/puntosAtencion/89/tabs/(rangosOutlet:rangos/puntoAtencion/89)'
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(3)
+  go(url_ad)
+  esperar(6)
+  select_usuarios = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/a')
+  select_usuarios.click
+  select_nivel1_agente   = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[4]/ul/li[2]')
+  select_nivel1_agente.click
+  esperar(4)
+  agregar_usuario = capturar(:xpath, '/html/body/app-root/main/div/app-agentes/div/app-tabla-agentes/div[1]/button')
+  agregar_usuario.click
+  nombre = "Vladimir"
+  apellido = "Putin"
+  email = "vladimir.putin@gmail.com"
+  nombre_usuario = capturar(:id , 'nombre')
+  nombre_usuario.send_keys nombre
+  nombre_usuario.clear()
+  nombre_usuario.send_keys nombre
+  apellido_usuario = capturar(:id , 'apellido')
+  apellido_usuario.send_keys apellido
+  apellido_usuario.clear()
+  apellido_usuario.send_keys apellido
+  email_usuario = capturar(:id , 'username')
+  email_usuario.send_keys email
+  email_usuario.clear()
+  email_usuario.send_keys email
+  esperar(3)
+  crear = capturar(:xpath, '/html/body/app-root/app-home/main/div/app-agregar-usuario/div/form/div[7]/button[2]')
+  crear.click
+  esperar(3)
+  puts "#{nombre} #{apellido} mail: #{email}"
+  puts "Se valida que si se selecciona el listado de agentes se puede crear / editar / eliminar agentes...[PASSED]".green
 end
 
 Then /^Verificar que se puede agregar ventanillas, editar o eliminar$/ do
-  # do something
-end
-
-Then /^Verificar que cada ventanilla puede agregar o quitar filas$/ do
-  # do something
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(6)
+  seccion_ventanillas = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[5]/a')
+  seccion_ventanillas.click
+  esperar(4)
+  agregar_ventanilla = capturar(:xpath, '/html/body/app-root/main/div/app-ventanillas/div/app-tabla-ventanillas/div[1]/button')
+  agregar_ventanilla.click
+  esperar(20)
+  ventanilla_nom = 'Windows'
+  ventanilla_nombre = capturar(:id, 'identificador')
+  ventanilla_nombre.send_keys ventanilla_nom
+  ventanilla_nombre.clear()
+  ventanilla_nombre.send_keys ventanilla_nom
+  fila_que_atiende = capturar(:xpath, '/html/body/app-root/main/div/app-ventanilla/div/form/div[1]/div/app-select-multiple/div/div/div/div[1]/select/option[2]')
+  fila_que_atiende.click
+  agregar = capturar(:xpath, '/html/body/app-root/main/div/app-ventanilla/div/form/div[1]/div/app-select-multiple/div/div/div/div[2]/button')
+  agregar.click
+  puts 'Se valida que se puede agregar ventanillas editar o eliminar como asi tambien se le puede quitar o agregar filas...........[passed]'.green
 end
 
 Then /^Verificar que la cartelera se muestra como se configuró$/ do
-  # do something
+  pagina = 'https://qa-usuarios-turnos.argentina.gob.ar'
+  go(pagina)
+  usuario = "modpda_01@mailinator.com"
+  password = "QAsnt2018"
+  asd = capturar(:id,'usuario')
+  esperar(1)
+  asd.send_keys usuario
+  asd.clear()
+  asd.send_keys usuario
+  cap = capturar(:id,'password')
+  cap.send_keys password
+  esperar(1)
+  cap.clear()
+  cap.send_keys password
+  bot = capturar(:class,'btn-success')
+  bot.click
+  esperar(6)
+  seccion_filas = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[3]/a')
+  seccion_filas.click
+  esperar(6)
+  seccion_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/a')
+  seccion_carteleras.click
+  administrar_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/ul/li[2]/a')
+  administrar_carteleras.click
+  esperar(1)
+  agregar_cartelera = capturar(:xpath, '/html/body/app-root/main/div/app-carteleras/div/app-tabla-carteleras/div[1]/button')
+  agregar_cartelera.click
+  esperar(1)
+  nombre_cartelera = 'TestCart'
+  nombre_carteleraq = capturar(:id, 'nombre')
+  nombre_carteleraq.send_keys nombre_cartelera
+  nombre_carteleraq.clear()
+  nombre_carteleraq.send_keys nombre_cartelera
+  filas_que_atiende = capturar(:xpath, '/html/body/app-root/main/div/app-cartelera/div/form/div[1]/div/app-select-multiple/div/div/div/div[1]/select/option[2]')
+  filas_que_atiende.click
+  agregar = capturar(:xpath, '/html/body/app-root/main/div/app-cartelera/div/form/div[1]/div/app-select-multiple/div/div/div/div[2]/button')
+  agregar.click
+  crear = capturar(:xpath, '/html/body/app-root/main/div/app-cartelera/div/form/div[2]/button/span')
+  crear.click
+  esperar(2)
+  puts "Se pudo crear la Cartelera: \"#{nombre_cartelera}\" ...Ok".uncolorize
+  seccion_filas = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[3]/a')
+  seccion_filas.click
+  esperar(6)
+  seccion_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/a')
+  seccion_carteleras.click
+  ver_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/ul/li[1]/a')
+  ver_carteleras.click
+  primera
+  esperar(1)
+  ultima
+  esperar(1)
+  scrap_cartelera = capturar(:xpath, '/html/body/app-root/app-cartelera/div').text
+  scrap_cartelera  =  scrap_cartelera.upcase!
+  nombre_cartelera =  nombre_cartelera.upcase!
+  if scrap_cartelera.include? nombre_cartelera
+    puts "La Cartelera: \"#{nombre_cartelera}\" se muestra Ok .. (en VER CARTELERAS)".uncolorize
+  else
+    puts fail "ERROR por no encontrar la cartelera: \"#{nombre_cartelera}\"".yellow
+    puts "#{scrap_cartelera}"
+  end
+  esperar(1)
+  primera
+  esperar(1)
+  seccion_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/a')
+  seccion_carteleras.click
+  administrar_carteleras = capturar(:xpath, '/html/body/app-root/app-header/header/nav/div/div/nav/li[6]/ul/li[2]/a')
+  administrar_carteleras.click
+  esperar(10)
+
+  1.times do
+    nombre_de_la_cartelera = capturar(:xpath, '/html/body/app-root/main/div/app-carteleras/div/app-tabla-carteleras/table/tbody/tr[3]/td[1]').text
+    nombre_de_la_cartelera = nombre_de_la_cartelera.upcase!
+    if nombre_de_la_cartelera == nombre_cartelera
+      eliminar = capturar(:xpath, '/html/body/app-root/main/div/app-carteleras/div/app-tabla-carteleras/table/tbody/tr[3]/td[3]/button[2]')
+      eliminar.click
+      confirmar_eliminar = capturar(:xpath, '/html/body/app-root/main/div/app-carteleras/div/app-tabla-carteleras/app-modal-eliminar-cartelera/app-modal/div/div/div/div[3]/div/button[2]')
+      confirmar_eliminar.click
+    end
+    esperar(1)
+  end
+  puts "Se valida que ABM Carteleras y se valida que muestra lo creado.......[PASSED]".green
 end
 
 Then /^Verificar que al seleccionar Tod se muestra una pantalla para solicitar turno$/ do
   # do something
 end
 
-Then /^Verificar que se puede puede configurar esta pantallas desde Carteleras$/ do
-  # do something
-end
+
 

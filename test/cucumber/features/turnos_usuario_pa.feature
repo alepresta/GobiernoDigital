@@ -54,10 +54,6 @@ Feature: Usuario punto de atención
   Scenario: Verificar la sección VENTANILLAS , Verificar que se puede agregar ventanillas / editar o eliminar
     Then Verificar que se puede agregar ventanillas, editar o eliminar
 
-  @turnos_usuario_pa         @turnos_usuario_pa_ventanillas
-  Scenario: Verificar la sección VENTANILLAS , Verificar que a cada ventanilla creada se le puede agregar o quitar filas
-    Then Verificar que cada ventanilla puede agregar o quitar filas
-
   @turnos_usuario_pa         @turnos_usuario_pa_carteleras
   Scenario: Verificar la seccion CARTELERAS ,Verificar que la cartelera se muestra como se configuró en Administrar Carteleras
     Then Verificar que la cartelera se muestra como se configuró
@@ -65,5 +61,4 @@ Feature: Usuario punto de atención
   @turnos_usuario_pa         @turnos_usuario_pa_tod
   Scenario: Verificar la sección TOD ,Verificar que TOD se muestra como se configuró en Administrar Carteleras, que funciona y que se puede sacar turno
     Then Verificar que al seleccionar Tod se muestra una pantalla para solicitar turno
-    Then Verificar que se puede puede configurar esta pantallas desde Carteleras
-    Then Verificar que la cartelera se muestra como se configuró
+    
