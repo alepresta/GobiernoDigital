@@ -61,4 +61,3 @@ Feature: Usuario punto de atención
   @turnos_usuario_pa         @turnos_usuario_pa_tod
   Scenario: Verificar la sección TOD ,Verificar que TOD se muestra como se configuró en Administrar Carteleras, que funciona y que se puede sacar turno
     Then Verificar que al seleccionar Tod se muestra una pantalla para solicitar turno
-    
